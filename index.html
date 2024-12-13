@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_YANDEX_API_KEY&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+</head>
+<body>
+
+    <div id="captcha-modal" class="modal">
+        <div class="modal-content">
+            <h2>Подтвердите, что вы не робот</h2>
+            <p id="captcha-text">Введите числа: <span id="captcha-numbers"></span></p>
+            <input type="text" id="captcha-input" name="captcha-input" required>
+            <button id="captcha-submit">Подтвердить</button>
+        </div>
+
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип студии ландшафтного дизайна">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#portfolio">Портфолио</a></li>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#products">Товары</a></li>
+                    <li><a href="#testimonials">Отзывы</a></li>
+                    <li><a href="#contact">Оставить заявку</a></li>
+                
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="home" class="hero">
+            <div class="slideshow-container">
+                <div class="slideshow-slide fade">
+                    <img src="images/slide1.jpg" alt="Слайд 1">
+                    <div class="slide-text">
+                        <h2>Добро пожаловать в нашу студию ландшафтного дизайна!</h2>
+                        <p>Мы создаем уникальные и красивые ландшафты для вашего дома и сада.</p>
+                    </div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="images/slide2.jpg" alt="Слайд 2">
+                    <div class="slide-text">
+                        <h2>Проектирование садов</h2>
+                        <p>Создание уникальных садовых проектов.</p>
+                    </div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="images/slide3.jpg" alt="Слайд 3">
+                    <div class="slide-text">
+                        <h2>Установка водоемов</h2>
+                        <p>Создание и установка водоемов в вашем саду.</p>
+                    </div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="images/slide4.jpg" alt="Слайд 4">
+                    <div class="slide-text">
+                        <h2>Создание альпийских горок</h2>
+                        <p>Создание альпийских горок и рокариев.</p>
+                    </div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>О нас</h2>
+                <p>Наша студия — это воплощение философии японского сада, где каждый элемент — от тщательно подобранного камня до изгиба ветвей — несёт в себе глубокий смысл и гармонию. Мы не просто создаём сады, мы творим произведения искусства, отражающие многовековые традиции и современное понимание красоты.</p>
+                <p>Более 10 лет мы погружены в мир японского ландшафтного дизайна, изучая его тонкости, постигая тайны баланса и созерцательности. Наши специалисты — это не только опытные садовники и дизайнеры, но и ценители японской культуры, стремящиеся передать в каждом проекте неповторимое очарование и умиротворение.</p>
+                <p>Мы верим, что сад — это не просто место для отдыха, а продолжение дома, отражение внутреннего мира человека. Поэтому мы подходим к каждому проекту индивидуально, учитывая ваши пожелания и особенности участка, создавая уникальный дизайн, который будет радовать вас долгие годы.</p>
+                <p>Нас вдохновляют классические японские сады — от строгой элегантности каресансуй до изысканной красоты садов чайной церемонии. Мы используем только высококачественные материалы, натуральные камни и растения, которые идеально вписываются в задуманную концепцию.</p>
+                <p>В своей работе мы стремимся к совершенству, стараясь достичь идеального баланса между естественностью и искусством. Мы уверены, что созданный нами сад станет не только украшением вашего дома, но и источником вдохновения, местом для релаксации и созерцания, где вы сможете обрести внутреннюю гармонию и умиротворение. Доверьте нам создание вашего личного оазиса спокойствия — и мы перенесём в ваш дом кусочек прекрасной Японии.</p>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2>Наши товары</h2>
+                <div class="product-carousel">
+                    <button class="carousel-prev" onclick="scrollProducts(-1)">&#10094;</button>
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <img src="images/product1.jpg" alt="Товар 1">
+                            <h3>Хвойные растения</h3>
+                            <p>Цена: от 500 руб.за саженец</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product2.jpg" alt="Товар 2">
+                            <h3>Лиственные деревья</h3>
+                            <p>Цена: от 1000 руб.за саженец</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product3.jpg" alt="Товар 3">
+                            <h3>Декоративные кустарники</h3>
+                            <p>Цена: от 300 руб.за саженец</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product4.jpg" alt="Товар 4">
+                            <h3>Многолетние цветы</h3>
+                            <p>Цена: от 150 руб.за саженец</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product5.jpg" alt="Товар 5">
+                            <h3>Однолетние цветы</h3>
+                            <p>Цена: от 50 руб. за рассаду</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product6.jpg" alt="Товар 6">
+                            <h3>Газонная трава</h3>
+                            <p>Цена: от 150 руб./кв.м (рулонный) / от 100 руб./кг (семена)</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product7.jpg" alt="Товар 7">
+                            <h3>Садовый грунт</h3>
+                            <p>Цена: от 300 руб./куб.м.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product8.jpg" alt="Товар 8">
+                            <h3>Дренаж</h3>
+                            <p>Цена: от 500 руб./куб.м.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product9.jpg" alt="Товар 9">
+                            <h3>Декоративная щепа</h3>
+                            <p>Цена: от 300 руб./куб.м.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product10.jpg" alt="Товар 10">
+                            <h3>Садовые дорожки</h3>
+                            <p>Цена: от 500 руб./кв.м</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product11.jpg" alt="Товар 11">
+                            <h3>Ограждения</h3>
+                            <p>Цена: от 1500 руб./п.м</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product12.jpg" alt="Товар 12">
+                            <h3>Садовая мебель </h3>
+                            <p>Цена: от 3000 руб.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product13.jpg" alt="Товар 13">
+                            <h3>Садовые светильники</h3>
+                            <p>Цена: от 1000 руб./шт.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product14.jpg" alt="Товар 14">
+                            <h3>Система автоматического полива</h3>
+                            <p>от 20000 руб.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product15.jpg" alt="Товар 15">
+                            <h3>Водоемы</h3>
+                            <p>от 5000 руб.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product16.jpg" alt="Товар 16">
+                            <h3>Декоративные камни и валуны</h3>
+                            <p>от 500 руб./шт.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-next" onclick="scrollProducts(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Наши услуги</h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <h3>Проектирование садов</h3>
+                        <p>Создание уникальных садовых проектов.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Установка водоемов</h3>
+                        <p>Создание и установка водоемов в вашем саду.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Создание альпийских горок</h3>
+                        <p>Создание альпийских горок и рокариев.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Уход за растениями</h3>
+                        <p>Профессиональный уход за растениями.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Озеленение террас</h3>
+                        <p>Создание зеленых зон на террасах и крышах.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Дизайн освещения</h3>
+                        <p>Проектирование и установка садового освещения.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2>Наше портфолио</h2>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/image1.jpg" alt="Проект 1"></div>
+                        <div class="swiper-slide"><img src="images/image2.jpg" alt="Проект 2"></div>
+                        <div class="swiper-slide"><img src="images/image3.jpg" alt="Проект 3"></div>
+                        <div class="swiper-slide"><img src="images/image4.jpg" alt="Проект 4"></div>
+                        <div class="swiper-slide"><img src="images/image5.jpg" alt="Проект 5"></div>
+                        <div class="swiper-slide"><img src="images/image6.jpg" alt="Проект 6"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>Отзывы</h2>
+                <div class="testimonial-cards" id="testimonial-cards">
+                    <div class="testimonial-card">
+                        <p>"Студия Ландшафтного Дизайна превратила мой сад в настоящий рай!"</p>
+                        <span>- Иван Иванов</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Профессиональный подход и внимание к деталям - это то, что отличает эту студию."</p>
+                        <span>- Анна Петрова</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Мой сад стал гордостью всего района благодаря их работе."</p>
+                        <span>- Сергей Сидоров</span>
+                    </div>
+                </div>
+                <div class="leave-review">
+                    <h3>Оставить отзыв</h3>
+                    <form id="reviewForm">
+                        <label for="reviewerName">Имя:</label>
+                        <input type="text" id="reviewerName" name="reviewerName" required>
+                        <label for="reviewText">Отзыв:</label>
+                        <textarea id="reviewText" name="reviewText" required></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2>Каталог</h2>
+                <div class="catalog-items">
+                    <div class="catalog-item" onclick="showProduct('images/flower1.jpg', 'Каменные фонари (Toro)', '15000 руб.', 'Традиционные японские каменные фонари Toro создадут атмосферу спокойствия и умиротворения в вашем саду. Различные стили и размеры позволяют идеально вписать их в любой ландшафт. Набор из трех каменных фонарей разной высоты, изготовленных из натурального гранита.')">
+                        <img src="images/flower1.jpg" alt="Цветок 1">
+                        <h3>Каменные фонари (Toro)</h3>
+                        <p>Цена: 15000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/flower2.jpg', 'Миниатюрный японский мостик (Hasibashi)', '12000 руб.', 'Изысканный миниатюрный мостик Хасибаси добавит изюминку вашему саду, создавая иллюзию спокойного ручья или пруда. Изготовлен из обработанной древесины сосны, покрыт водостойким лаком. Длина 1,5 м.')">
+                        <img src="images/flower2.jpg" alt="Цветок 2">
+                        <h3>Миниатюрный японский мостик (Hasibashi)</h3>
+                        <p>Цена: 12000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/flower3.jpg', 'Карликовая японская сосна (Pinus parviflora)', '8000 руб.', 'Элегантное и долговечное хвойное дерево, идеально подходящее для японского сада. Его изящная форма и текстура иголок создадут неповторимую атмосферу. Высота 50 см, в горшке.')">
+                        <img src="images/flower3.jpg" alt="Цветок 3">
+                        <h3>Карликовая японская сосна (Pinus parviflora)</h3>
+                        <p>Цена: 8000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/landscape1.jpg', 'Садовый светильник в стиле Chochin', '3500 руб.', 'Мягкое тёплое свечение этих фонарей создаст уютную и таинственную атмосферу в вашем саду, особенно вечером. Светодиодный светильник, имитирующий традиционный японский фонарь Chochin. Работает от солнечной батареи.')">
+                        <img src="images/landscape1.jpg" alt="Ландшафтная задумка 1">
+                        <h3>Садовый светильник в стиле Chochin</h3>
+                        <p>Цена: 3500 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/landscape2.jpg', 'Камни для сухого сада (Karesansui)', '7000 руб.', 'Создайте свой собственный миниатюрный сухой сад Каресэнсуй, символ гармонии и спокойствия. Набор тщательно подобранных камней разных размеров и форм (гравий, булыжники). Вес 50 кг.')">
+                        <img src="images/landscape2.jpg" alt="Ландшафтная задумка 2">
+                        <h3>Камни для сухого сада (Karesansui)</h3>
+                        <p>Цена: 7000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/landscape3.jpg', 'Бамбуковая изгородь (Bamboo Fence)', '9000 руб.', 'Создайте естественную и элегантную границу для вашего сада с помощью этой бамбуковой изгороди. Она защитит вас от ветра и любопытных глаз. Высота 1,2 м, длина 2 м. Изготовлено из обработанного бамбука.')">
+                        <img src="images/landscape3.jpg" alt="Ландшафтная задумка 3">
+                        <h3>Бамбуковая изгородь (Bamboo Fence)</h3>
+                        <p>Цена: 9000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/flower4.jpg', 'Фигурки для японского сада (Tsukubai)', '4000 руб.', 'Добавьте в свой сад нотку мистики и легенды с помощью этих очаровательных фигурок. Набор из трех небольших керамических фигурок: черепаха, журавль, лиса.')">
+                        <img src="images/flower4.jpg" alt="Цветок 4">
+                        <h3>Фигурки для японского сада (Tsukubai)</h3>
+                        <p>Цена: 4000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/flower5.jpg', 'Водопад (Mini Waterfall)', '20000 руб.', 'Создайте в своем саду успокаивающий водопад, добавив звуки природы и визуальную красоту. Миниатюрный водопад с насосом и подсветкой. Высота 60 см.')">
+                        <img src="images/flower5.jpg" alt="Цветок 5">
+                        <h3>Водопад (Mini Waterfall)</h3>
+                        <p>Цена: 20000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/landscape4.jpg', 'Японский клён (Acer palmatum)', '10000 руб.', 'Японский клён славится своей красотой и разнообразием форм и цветов листвы. Он станет украшением любого японского сада. Высота 1 м, в горшке.')">
+                        <img src="images/landscape4.jpg" alt="Ландшафтная задумка 4">
+                        <h3>Японский клён (Acer palmatum)</h3>
+                        <p>Цена: 10000 руб.</p>
+                    </div>
+                    <div class="catalog-item" onclick="showProduct('images/landscape5.jpg', 'Садовая скамейка из дерева (Zashiki)', '18000 руб.', 'Уютная и комфортная скамейка, идеально подходящая для отдыха в вашем саду в японском стиле. Изготовлена из тикового дерева, пропитана защитным составом. Размеры: 120х60х45 см.')">
+                        <img src="images/landscape5.jpg" alt="Ландшафтная задумка 5">
+                        <h3>Садовая скамейка из дерева (Zashiki)</h3>
+                        <p>Цена: 18000 руб.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="product-details" class="product-details" style="display: none;">
+            <div class="container">
+                <h2>Детали товара</h2>
+                <div class="product-details-content">
+                    <img id="product-image" src="" alt="Товар">
+                    <h3 id="product-name"></h3>
+                    <p id="product-price"></p>
+                    <p id="product-description"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Оставить заявку</h2>
+                <form id="contactForm">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            
+                <p></p>
+                <p></p>
+                
+                <div id="map" style="height: 400px; width: 100%;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Студия Ландшафтного Дизайна Green Gallery. Все права защищены.</p>
+            <p>Телефон: +7 (123) 456-78-90</p>
+            <p>Email: info@landscape-studio.ru</p>
+        </div>
+    </footer>
+
+    <!-- Стрелочка для прокрутки вверх -->
+    <div id="scroll-to-top" class="scroll-to-top">
+        <img src="images/arrow-up.png" alt="Прокрутить вверх">
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
